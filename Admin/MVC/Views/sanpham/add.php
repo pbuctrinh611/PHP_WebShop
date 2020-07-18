@@ -26,8 +26,16 @@
       <input type="text" class="form-control" id="" placeholder="" name="SoLuong">
     </div>
     <div class="form-group">
-      <label for="">Hình ảnh</label>
-      <input type="file" class="form-control" id="" placeholder="" name="HinhAnh">
+      <label for="">Hình ảnh 1 </label>
+      <input type="file" class="form-control" id="" placeholder="" name="HinhAnh1">
+    </div>
+    <div class="form-group">
+      <label for="">Hình ảnh 2</label>
+      <input type="file" class="form-control" id="" placeholder="" name="HinhAnh2">
+    </div>
+    <div class="form-group">
+      <label for="">Hình ảnh 3</label>
+      <input type="file" class="form-control" id="" placeholder="" name="HinhAnh3">
     </div>
     <div class="form-group">
       <label for="cars">Mã khuyến mãi </label>

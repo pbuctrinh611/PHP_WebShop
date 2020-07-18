@@ -28,9 +28,19 @@
             <input type="text" class="form-control" id="" placeholder="" name="SoLuong" value="<?=$data['SoLuong']?>">
         </div>
         <div class="form-group">
-            <label for="">Hình ảnh</label>
-            <img src="../public/<?=$data['HinhAnh']?>" height="200px" width="200px">
-            <input type="file" class="form-control" id="" placeholder="" name="HinhAnh" value="<?=$data['HinhAnh']?>">
+            <label for="">Hình ảnh 1</label>
+            <img src="../public/<?=$data['HinhAnh1']?>" height="200px" width="200px">
+            <input type="file" class="form-control" id="" placeholder="" name="HinhAnh1" value="<?=$data['HinhAnh1']?>">
+        </div>
+        <div class="form-group">
+            <label for="">Hình ảnh 2</label>
+            <img src="../public/<?=$data['HinhAnh2']?>" height="200px" width="200px">
+            <input type="file" class="form-control" id="" placeholder="" name="HinhAnh2" value="<?=$data['HinhAnh2']?>">
+        </div>
+        <div class="form-group">
+            <label for="">Hình ảnh 3</label>
+            <img src="../public/<?=$data['HinhAnh3']?>" height="200px" width="200px">
+            <input type="file" class="form-control" id="" placeholder="" name="HinhAnh3" value="<?=$data['HinhAnh3']?>">
         </div>
         <div class="form-group">
             <label for="cars">Mã khuyến mãi </label>

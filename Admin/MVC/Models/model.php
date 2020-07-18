@@ -70,6 +70,7 @@ class Model
 
         $query = "UPDATE $this->table SET  $v   WHERE $this->contens = " . $data[$this->contens];
 
+        
         $result = $this->conn->query($query);
         
         if ($result == true) {

@@ -2,10 +2,10 @@
 $mod = isset($_GET['mod']) ? $_GET['mod'] : "home";
 switch ($mod) {
     case 'home':
-        // require_once('MVC/controllers/HomeController.php');
-        // $controller_obj = new HomeController();
-        // $controller_obj->list();
-        // break;
+        require_once('Controllers/HomeController.php');
+         $controller_obj = new controller();
+         $controller_obj->list();
+         break;
     case 'cart':
         // require_once('MVC/controllers/CategoryController.php');
         // $controller_obj = new CategoryController();

@@ -84,6 +84,25 @@
                           break;
                       }
                       break;
+                    case 'banner':
+                      switch ($act) {
+                        case 'list':
+                          require_once('MVC/views/banner/list.php');
+                          break;
+                        case 'add':
+                          require_once('MVC/views/banner/add.php');
+                          break;
+                        case 'detail':
+                          require_once('MVC/views/banner/detail.php');
+                          break;
+                        case 'edit':
+                          require_once('MVC/views/banner/edit.php');
+                          break;
+                        default:
+                          require_once('MVC/views/banner/list.php');
+                          break;
+                      }
+                      break;
                     case 'nguoidung':
                       switch ($act) {
                         case 'list':

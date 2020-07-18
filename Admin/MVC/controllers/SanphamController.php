@@ -30,19 +30,35 @@ class SanphamController
     public function store()
     {
         $target_dir = "../public/img/products/";  // thư mục chứa file upload
-        $HinhAnh = "";
 
-        $target_file = $target_dir . basename($_FILES["HinhAnh"]["name"]); // link sẽ upload file lên
+        $HinhAnh1 = "";
+        $target_file = $target_dir . basename($_FILES["HinhAnh1"]["name"]); // link sẽ upload file lên
 
-        $status_upload = move_uploaded_file($_FILES["HinhAnh"]["tmp_name"], $target_file);
+        $status_upload = move_uploaded_file($_FILES["HinhAnh1"]["tmp_name"], $target_file);
 
         if ($status_upload) { // nếu upload file không có lỗi 
-            $HinhAnh =  "img/products/" . basename($_FILES["HinhAnh"]["name"]);
+            $HinhAnh1 =  "img/products/" . basename($_FILES["HinhAnh1"]["name"]);
         }
+
+        $HinhAnh2 = "";
+        $target_file = $target_dir . basename($_FILES["HinhAnh2"]["name"]); // link sẽ upload file lên
+        $status_upload = move_uploaded_file($_FILES["HinhAnh2"]["tmp_name"], $target_file);
+        if ($status_upload) { // nếu upload file không có lỗi 
+            $HinhAnh2 =  "img/products/" . basename($_FILES["HinhAnh2"]["name"]);
+        }
+
+        $HinhAnh3 = "";
+        $target_file = $target_dir . basename($_FILES["HinhAnh3"]["name"]); // link sẽ upload file lên
+        $status_upload = move_uploaded_file($_FILES["HinhAnh3"]["tmp_name"], $target_file);
+        if ($status_upload) { // nếu upload file không có lỗi 
+            $HinhAnh3 =  "img/products/" . basename($_FILES["HinhAnh3"]["name"]);
+        }
+
         $TrangThai = 0;
         if (isset($_POST['TrangThai'])) {
             $TrangThai = $_POST['TrangThai'];
         }
+
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $ThoiGian =  date('Y-m-d H:i:s');
         $data = array(
@@ -50,7 +66,9 @@ class SanphamController
             'TenSP'  =>   $_POST['TenSP'],
             'DonGia' => $_POST['DonGia'],
             'SoLuong' => $_POST['SoLuong'],
-            'HinhAnh' => $HinhAnh,
+            'HinhAnh1' => $HinhAnh1,
+            'HinhAnh2' => $HinhAnh2,
+            'HinhAnh3' => $HinhAnh3,
             'MaKM' =>  $_POST['MaKM'],
             'ManHinh' =>  $_POST['ManHinh'],
             'HDH' => $_POST['HDH'],
@@ -73,6 +91,7 @@ class SanphamController
                 $data[$key] = $value;
             }
         }
+
         $this->sanpham_model->store($data);
     }
     public function delete()
@@ -93,15 +112,27 @@ class SanphamController
     {
 
         $target_dir = "../public/img/products/";  // thư mục chứa file upload
-        $HinhAnh = "";
 
-        $target_file = $target_dir . basename($_FILES["HinhAnh"]["name"]); // link sẽ upload file lên
-
-        $status_upload = move_uploaded_file($_FILES["HinhAnh"]["tmp_name"], $target_file);
-        var_dump(basename($_FILES["HinhAnh"]["name"]));
-
+        $HinhAnh1 = "";
+        $target_file = $target_dir . basename($_FILES["HinhAnh1"]["name"]); // link sẽ upload file lên
+        $status_upload = move_uploaded_file($_FILES["HinhAnh1"]["tmp_name"], $target_file);
+        var_dump(basename($_FILES["HinhAnh1"]["name"]));
         if ($status_upload) { // nếu upload file không có lỗi 
-            $thumbnail = basename($_FILES["HinhAnh"]["name"]);
+            $HinhAnh1 = "img/products/" .basename($_FILES["HinhAnh1"]["name"]);
+        }
+
+        $HinhAnh2 = "";
+        $target_file = $target_dir . basename($_FILES["HinhAnh2"]["name"]); // link sẽ upload file lên
+        $status_upload = move_uploaded_file($_FILES["HinhAnh2"]["tmp_name"], $target_file);
+        if ($status_upload) { // nếu upload file không có lỗi 
+            $HinhAnh2 =  "img/products/" . basename($_FILES["HinhAnh2"]["name"]);
+        }
+
+        $HinhAnh3 = "";
+        $target_file = $target_dir . basename($_FILES["HinhAnh3"]["name"]); // link sẽ upload file lên
+        $status_upload = move_uploaded_file($_FILES["HinhAnh3"]["tmp_name"], $target_file);
+        if ($status_upload) { // nếu upload file không có lỗi 
+            $HinhAnh3 =  "img/products/" . basename($_FILES["HinhAnh3"]["name"]);
         }
 
         $TrangThai = 0;
@@ -116,7 +147,9 @@ class SanphamController
             'TenSP'  =>   $_POST['TenSP'],
             'DonGia' => $_POST['DonGia'],
             'SoLuong' => $_POST['SoLuong'],
-            'HinhAnh' => $HinhAnh,
+            'HinhAnh1' => $HinhAnh1,
+            'HinhAnh2' => $HinhAnh2,
+            'HinhAnh3' => $HinhAnh3,
             'MaKM' =>  $_POST['MaKM'],
             'ManHinh' =>  $_POST['ManHinh'],
             'HDH' => $_POST["HDH"],
@@ -139,10 +172,15 @@ class SanphamController
                 $data[$key] = $value;
             }
         }
-        if ($HinhAnh == "") {
-            unset($data['HinhAnh']);
+        if ($HinhAnh1 == "") {
+            unset($data['HinhAnh1']);
         }
-
+        if ($HinhAnh2 == "") {
+            unset($data['HinhAnh2']);
+        }
+        if ($HinhAnh3 == "") {
+            unset($data['HinhAnh3']);
+        }
         $this->sanpham_model->update($data);
     }
 }

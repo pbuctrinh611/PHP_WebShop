@@ -31,4 +31,14 @@ class login
         session_destroy();
         header('location: ?mod=login');
     }
+    function check_account(){
+        $query =  "SELECT * from NguoiDung";
+
+        require("result.php");
+
+        return $data;
+    }
+    function register($data){
+        
+    }
 }

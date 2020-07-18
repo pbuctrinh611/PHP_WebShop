@@ -60,6 +60,12 @@
 </li>
 
 <li class="nav-item">
+  <a class="nav-link" href="?mod=banner">
+    <i class="fas fa-fw fa-table"></i>
+    <span>Quản lý Banner</span></a>
+</li>
+
+<li class="nav-item">
   <a class="nav-link" href="?mod=khuyenmai">
     <i class="fas fa-fw fa-table"></i>
     <span>Quản lý khuyến mãi</span></a>

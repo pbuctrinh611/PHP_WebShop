@@ -1,15 +1,16 @@
 <?php
-require_once("MVC/Models/blog_post.php");
-class Blog_postController
+require_once("Models/model.php");
+class controller
 {
     var $model;
     public function __construct()
     {
-       
+       $this->model = new model();
     }
     
     function list()
     {
-        require_once("MVC/Views/index.php");
+        $data = $this->model->limit(1,2);
+        var_dump($data);
     }
 }
